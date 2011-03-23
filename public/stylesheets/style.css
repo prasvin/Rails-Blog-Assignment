@@ -12,5 +12,8 @@ body {
 #notice{
     color: #0000FF;
 }
+.post a{
+    margin:8px;
+}
 
 
