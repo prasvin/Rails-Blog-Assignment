@@ -2,16 +2,15 @@ body {
     background-color: #FBF9CA;
     margin-left:20px;
 }
-.field_with_errors {
-    padding: 2px
-    display: table;
-}
 #error_explanation {
     margin-bottom: 10px;
     width: 450px;
     border: 2px solid black;
     padding: 7px;
-    background-color: #f0f0f0;
+    background-color: #F0F0F0;
+}
+#notice{
+    color: #0000FF;
 }
 
 

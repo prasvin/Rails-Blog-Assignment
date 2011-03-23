@@ -4,17 +4,17 @@ class BlogsController < ApplicationController
   before_filter :date_filter, :only => :show
 
   def index
-    @blogs = Blog.all
+    @posts = Blog.all
   end
 
   def new
-    @blog = Blog.new
+    @post = Blog.new
   end
 
   def create
-    @blog = Blog.new(params[:blog])
-    if @blog.save
-      redirect_to @blog, :notice => "Post created successfully !"
+    @post = Blog.new(params[:blog])
+    if @post.save
+      redirect_to @post, :notice => "Post created successfully !"
     else
       flash[:alert] = "OOPS! something went wrong"
       render "new"
@@ -22,14 +22,14 @@ class BlogsController < ApplicationController
   end
 
   def show
-    @blog = Blog.find(params[:id])
+    @post = Blog.find(params[:id])
   end
 
   def update
-    @blog = Blog.find(params[:id])
+    @post = Blog.find(params[:id])
 
-    if @blog.update_attributes(params[:blog])
-      redirect_to @blog, :notice => 'Post was successfully updated.'
+    if @post.update_attributes(params[:blog])
+      redirect_to @post, :notice => 'Post was successfully updated.'
     else
       flash[:alert] = "OOPS! something went wrong"
       render "edit"
@@ -37,12 +37,12 @@ class BlogsController < ApplicationController
   end
 
   def edit
-    @blog = Blog.find(params[:id])
+    @post = Blog.find(params[:id])
   end
 
   def destroy
-    @blog = Blog.find(params[:id])
-    @blog.destroy
+    @post = Blog.find(params[:id])
+    @post.destroy
     redirect_to(blogs_path, :notice => "Post Deleted !!")
   end
 
@@ -59,8 +59,8 @@ class BlogsController < ApplicationController
 
   def date_filter
     @p = Blog.find(params[:id])
-    if(@p.created_at.day > 21)
-      redirect_to blogs_path, :notice => 'This Post is more than 5 days old !!!'
+    if( (Time.now.day-@p.created_at.day) >= 1)
+      redirect_to blogs_path, :notice => 'This is not a Post created Today. Click Edit to view the Post'
     end
   end
 
