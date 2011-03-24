@@ -19,3 +19,6 @@ namespace :app do
       ].each do |attrs|
         Person.find_or_create_by_title(attrs)
       end
+    end
+
+  end

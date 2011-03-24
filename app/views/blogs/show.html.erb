@@ -35,6 +35,12 @@
 <%= @post.created_at.to_date %>
 </p>
 
+<h2>All Comments </h2>
+<% show_all_comments %>
+<h4>Add a Comment</h4>
+
+<%= render 'comments/comment_form' %>
+
 
 <%= link_to 'Edit', edit_blog_path(@student) %> |
 <%= link_to 'Back to Index', blogs_path %>

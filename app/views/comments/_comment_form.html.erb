@@ -1,0 +1,18 @@
+
+<%= form_for(@comment) do |c| %>
+
+<div class = "field">
+<%= c.label :name %><br />
+<%= c.text_field :name %>
+</div>
+
+<div class = "field">
+<%= c.label :remark %><br />
+<%= c.text_area :remark %>
+</div>
+
+<div class="actions">
+<%= c.submit %>
+</div>
+
+<% end %>
