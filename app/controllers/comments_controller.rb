@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to @post, :notice => "Commented !"
     else
-      flash[:alert] = "OOPS! something went wrong"
+      flash[:alert] = "OOPS!! something went wrong"
       render "new"
     end
   end
