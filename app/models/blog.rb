@@ -10,6 +10,8 @@ class Blog < ActiveRecord::Base
   before_save :title_capitalize
   scope :general_stuff, where(:general_content => true)
 
+  has_many :comments, :dependent => :destroy
+
   def title_capitalize
     self.title.upcase!
   end

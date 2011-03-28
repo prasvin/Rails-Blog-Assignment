@@ -1,16 +1,17 @@
 MyBlog::Application.routes.draw do
 
-  resources :blogs
-  resources :comments
+  resources :blogs do
+    resources :comments
+  end
 
-  get "blogs/index"
-
-  get "blogs/new"
-
-  get "blogs/show"
-
-  get "blogs/edit"
-
+  # get "blogs/index"
+  #
+  #  get "blogs/new"
+  #
+  #  get "blogs/show"
+  #
+  #  get "blogs/edit"
+  #
   # get "blogs/show/comments"
 
   # The priority is based upon order of creation:

@@ -1,19 +1,81 @@
+header{
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 30px;
+}
 body {
-    background-color: #FBF9CA;
-    margin-left:20px;
+    background-color: #9FA5FB;
+    margin-left:50px;
+    margin-top:20px;
 }
 #error_explanation {
     margin-bottom: 10px;
     width: 450px;
     border: 2px solid black;
     padding: 7px;
-    background-color: #F0F0F0;
+    background-color: #F01120;
 }
 #notice{
-    color: #0000FF;
+    color: #1D5929;
+}
+.post{
+    margin: 15px;
+    padding: 15px;
+    font-size: 18px;
+    background-color: #6F79FA;
+    width:75%;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
 }
 .post a{
-    margin:8px;
+    margin-left:10px;
+    float:right;
 }
+.create a{
+    font-size: 18px;
+    margin:15px;
+}
+.posts{
+    margin-left:10px;
+    margin-top:30px;
+    font-weight:italic;
+    padding: 7px;
+}
+.post_title{
+    font-size: 22px;
+    margin-bottom:15px;
+    font-weight:bold;
+}
+.author_information,.post_information{
+    font-size: 16px;
+    margin-bottom:15px;
+}
+.author_information div,.post_information div, .edit_blog div, .new_blog div, .new_comment div{
+    padding:5px;
+}
+.post_description{
+    font-size: 18px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.comment{
+    background-color:#848EFA;
+}
+.comment ul li{
+    padding:3px;
+}
+.new_comment, .new_blog, .edit_blog{
+    margin-bottom: 30px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    background-color:#5F69EA;
+    width:500px;
+    padding:20px;
+    font-weight:bold;
+}
+ul ,li{
+    list-style-type:none;
+}
+
 
 

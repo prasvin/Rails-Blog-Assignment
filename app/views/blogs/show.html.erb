@@ -1,45 +1,30 @@
-<h1>Showing Desired Post</h1>
 
-<p>
-<b>Author:</b>
-<%= @post.author %>
-</p>
-
-<p>
-<b>Email:</b>
-<%= @post.email %>
-</p>
-
-<p>
-<b>General Content:</b>
-<%= @post.general_content %>
-</p>
-
-<p>
-<b>Category:</b>
-<%= @post.category %>
-</p>
-
-<p>
-<b>Title:</b>
+<div class="post_title">
 <%= @post.title %>
-</p>
+</div>
 
-<p>
-<b>Description:</b>
-<%= @post.description %>
-</p>
+<div class="author_information">
+  <div><b>Author:</b>
+  <%= @post.author %></div>
+  <div><b>Email:</b>
+  <%= @post.email %></div>
+  <div><b>Posted Date:</b>
+  <%= @post.created_at.to_date %></div>
+</div>
 
-<p>
-<b>Posted Date:</b>
-<%= @post.created_at.to_date %>
-</p>
+<div class="post_information">
+  <div><b>Category:</b>
+  <%= @post.category %></div>
+  <div><b>General Content:</b>
+  <%= @post.general_content %></div>
+</div>
 
-<h2>All Comments </h2>
-<% show_all_comments %>
-<h4>Add a Comment</h4>
+<div class="post_description">
+  <%= @post.description %>
+</div>
 
-<%= render 'comments/comment_form' %>
+
+<%= render 'Comments/comment_form' %>
 
 
 <%= link_to 'Edit', edit_blog_path(@student) %> |

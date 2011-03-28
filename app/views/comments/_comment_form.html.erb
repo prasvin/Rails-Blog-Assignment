@@ -1,18 +1,30 @@
+<h3>Comments:</h3>
+<% p = Blog.find(params[:id]) %>
+<% p.comments.each do |c| %>
+<div class= "comment">
+  <ul>
+    <li><label>Name:<label> <%= c.name %></li>
+      <li><label>Remark:<label> <%= c.remark %></li>
+        <%= link_to 'Remove It', blog_comment_path(p,c), :method => :delete, :confirm => "Sure ?" %>
+      </ul>
+    </div>
+    <% end %>
 
-<%= form_for(@comment) do |c| %>
 
-<div class = "field">
-<%= c.label :name %><br />
-<%= c.text_field :name %>
-</div>
+    <%= form_for([@post,@post.comments.build]) do |c| %>
 
-<div class = "field">
-<%= c.label :remark %><br />
-<%= c.text_area :remark %>
-</div>
+    <div class = "field">
+      <%= c.label :name %><br />
+      <%= c.text_field :name %>
+    </div>
 
-<div class="actions">
-<%= c.submit %>
-</div>
+    <div class = "field">
+      <%= c.label :remark %><br />
+      <%= c.text_area :remark , :rows => 5  %>
+    </div>
 
-<% end %>
+    <div class="actions">
+      <%= c.submit %>
+    </div>
+
+    <% end %>
